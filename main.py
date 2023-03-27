@@ -1,65 +1,140 @@
-def greet(bot_name, birth_year):
-    print('Hello! My name is ' + bot_name + '.')
-    print('I was created in ' + birth_year + '.')
+camel = r"""
+Switching on the camera in the camel habitat...
+ ___.-''''-.
+/___  @    |
+',,,,.     |         _.'''''''._
+     '     |        /           \
+     |     \    _.-'             \
+     |      '.-'                  '-.
+     |                               ',
+     |                                '',
+      ',,-,                           ':;
+           ',,| ;,,                 ,' ;;
+              ! ; !'',,,',',,,,'!  ;   ;:
+             : ;  ! !       ! ! ;  ;   :;
+             ; ;   ! !      ! !  ; ;   ;,
+            ; ;    ! !     ! !   ; ;
+            ; ;    ! !    ! !     ; ;
+           ;,,      !,!   !,!     ;,;
+           /_I      L_I   L_I     /_I
+Look at that! Our little camel is sunbathing!"""
+
+lion = r"""
+Switching on the camera in the lion habitat...
+                                               ,w.
+                                             ,YWMMw  ,M  ,
+                        _.---.._   __..---._.'MMMMMw,wMWmW,
+                   _.-""        '''           YP"WMMMMMMMMMb,
+                .-' __.'                   .'     MMMMW^WMMMM;
+    _,        .'.-'"; `,       /`     .--""      :MMM[==MWMW^;
+ ,mM^"     ,-'.'   /   ;      ;      /   ,       MMMMb_wMW"  @\
+,MM:.    .'.-'   .'     ;     `\    ;     `,     MMMMMMMW `"=./`-,
+WMMm__,-'.'     /      _.\      F'''-+,,   ;_,_.dMMMMMMMM[,_ / `=_}
+"^MP__.-'    ,-' _.--""   `-,   ;       \  ; ;MMMMMMMMMMW^``; __|
+           /   .'            ; ;         )  )`{  \ `"^W^`,   \  :
+          /  .'             /  (       .'  /     Ww._     `.  `"
+         /  Y,              `,  `-,=,_{   ;      MMMP`""-,  `-._.-,
+        (--, )                `,_ / `) \/"")      ^"      `-, -;"\:
+The lion is roaring!"""
+
+deer = r"""
+Switching on the camera in the deer habitat...
+   /|       |\
+`__\\       //__'
+   ||      ||
+ \__`\     |'__/
+   `_\\   //_'
+   _.,:---;,._
+   \_:     :_/
+     |@. .@|
+     |     |
+     ,\.-./ \
+     ;;`-'   `---__________-----.-.
+     ;;;                         \_\
+     ';;;                         |
+      ;    |                      ;
+       \   \     \        |      /
+        \_, \    /        \     |\
+          |';|  |,,,,,,,,/ \    \ \_
+          |  |  |           \   /   |
+          \  \  |           |  / \  |
+           | || |           | |   | |
+           | || |           | |   | |
+           | || |           | |   | |
+           |_||_|           |_|   |_|
+          /_//_/           /_/   /_/
+Our 'Bambi' looks hungry. Let's go to feed it!"""
+
+goose = r"""
+Switching on the camera in the goose habitat...
+
+                                    _
+                                ,-"" "".
+                              ,'  ____  `.
+                            ,'  ,'    `.  `._
+   (`.         _..--.._   ,'  ,'        \    \
+  (`-.\    .-""        ""'   /          (  d _b
+ (`._  `-"" ,._             (            `-(   \
+ <_  `     (  <`<            \              `-._\
+  <`-       (__< <           :
+   (__        (_<_<          ;
+    `------------------------------------------
+The goose is staring intently at you... Maybe it's time to change the channel?"""
+
+bat = r"""
+Switching on the camera in the bat habitat...
+_________________               _________________
+ ~-.              \  |\___/|  /              .-~
+     ~-.           \ / o o \ /           .-~
+        >           \\  W  //           <
+       /             /~---~\             \
+      /_            |       |            _\
+         ~-.        |       |        .-~
+            ;        \     /        i
+           /___      /\   /\      ___\
+                ~-. /  \_/  \ .-~
+                   V         V
+This bat looks like it's doing fine."""
+
+rabbit = r"""
+Switching on the camera in the rabbit habitat...
+         ,
+        /|      __
+       / |   ,-~ /
+      Y :|  //  /
+      | jj /( .^
+      >-"~"-v"
+     /       Y
+    jo  o    |
+   ( ~T~     j
+    >._-' _./
+   /   "~"  |
+  Y     _,  |
+ /| ;-"~ _  l
+/ l/ ,-"~    \
+\//\/      .- \
+ Y        /    Y
+ l       I     !
+ ]\      _\    /"\
+(" ~----( ~   Y.  )
+It looks like we will soon have more rabbits!"""
 
 
-def remind_name():
-    print('Please, remind me your name.')
-    name = input()
-    print('What a great name you have, ' + name + '!')
+animals = [camel, lion, deer, goose, bat, rabbit]
+
+while True:
+    user_input = input('Please enter an animal index (or type "exit" to quit): ')
+    if user_input != 'exit':
+        try:
+            index = int(user_input)
+            print(animals[index])
+        except (ValueError, IndexError):
+            print('Invalid input. Please try again.')
+    else:
+        print('See you later!')
+        break
 
 
-def guess_age():
-    print('Let me guess your age.')
-    print('Enter remainders of dividing your age by 3, 5 and 7.')
-
-    rem3 = int(input())
-    rem5 = int(input())
-    rem7 = int(input())
-    age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105
-
-    print("Your age is " + str(age) + "; that's a good time to start programming!")
 
 
-def count():
-    print('Now I will prove to you that I can count to any number you want.')
-
-    num = int(input())
-    curr = 0
-    while curr <= num:
-        print(curr, '!')
-        curr = curr + 1
-
-
-def test():
-    print("Let's test your programming knowledge.")
-    # write your code here
-    print('Completed, have a nice day!')
-
-
-def end():
-    print('Congratulations, have a nice day!')
-
-
-greet('Aid', '2020')  # change it as you need
-remind_name()
-guess_age()
-count()
-
-print("What is the capital of France?")
-print("1. Berlin")
-print("2. Paris")
-print("3. London")
-print("4. Rome")
-
-answer = input("Enter the number corresponding to your answer: ")
-
-while answer != "2":
-    print("Please try again.")
-    answer = input("Enter the number corresponding to your answer: ")
-
-print("Congratulations, have a nice day!")
-
-# ...
-end()
 
